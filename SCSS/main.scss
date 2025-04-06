@@ -1,0 +1,837 @@
+@use "_index" as *;
+
+* {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+// @use '../SCSS/extend' as *;
+
+/* ----bg-img section---- */
+
+#background-img-sec-1 {
+  @include height(1000);
+  background-color: $black-color;
+}
+
+/* ----nav and home-section---- */
+
+#nav-home-section {
+  @include pos(absolute);
+  top: 0 !important;
+  z-index: 10;
+}
+
+/* ----logo---- */
+
+.navbar-brand {
+  align-items: center;
+}
+
+.logo-text {
+  font-size: map-get($f-size-zone, suc);
+  letter-spacing: 1px;
+  line-height: 46px;
+  color: $fefe;
+  font-family: $font-stack !important;
+  font-style: italic;
+}
+
+/* ----home-section---- */
+
+#home-section {
+  padding: 0px 0px 120px 80px !important;
+}
+
+.nav-item {
+  padding: 10px !important;
+
+  .nav-text {
+    letter-spacing: 0px;
+    line-height: 25px;
+    color: $fefe;
+    @include fonts(500, 18);
+
+    /* Default border style (transparent) */
+    border-bottom: 3px solid transparent;
+    transition: border-bottom-color 0.3s ease, transform 0.3s ease;
+  }
+
+  &:hover .nav-text {
+    color: $hov-red !important;
+
+    /* Visible border on hover */
+    border-bottom-color: #e62646;
+    transform: scale(1.2) translateY(-1px);
+  }
+}
+
+.navbar-toggler-icon img{
+ opacity: 1 !important;
+ border: $fefe solid 3px;
+ border-radius: 10px;
+ @include h-w(30,30);
+}
+
+.carousel-item img {
+  width: 100% !important;
+}
+
+.nav-item a {
+  padding: 10px !important;
+}
+
+%padding {
+  padding-left: 80px !important;
+  padding-right: 80px !important;
+}
+
+.home-head-sec {
+  @extend %padding;
+  display: flex;
+  @include justify-c;
+}
+
+.home-head-sec-one {
+  padding-top: 0%;
+
+  .home-t-one {
+    letter-spacing: 2px;
+    line-height: 70px;
+    color: $fefe;
+    @include textalign-c;
+    @include fonts(800, 80);
+  }
+}
+
+.home-head-sec-two {
+  letter-spacing: 2px;
+  // line-height: 70px;
+  color: $fefe;
+  @include textalign-c;
+  @include fonts(500, 30);
+  padding-top: 40px !important;
+  padding-bottom: 65px !important;
+}
+
+.home-button-part {
+  @include justify(center);
+}
+
+.home-head-sec-button {
+  letter-spacing: 1px;
+  color: $fefe;
+  @include textalign-c;
+  @include fonts(500, 18);
+  @include h-w(41, 210);
+  border-radius: 20px;
+  background-color: map-get($theme-colors, danger);
+  border: none;
+}
+
+/* ----Dots for slick slider---- */
+
+.slick-dots {
+  li {
+    margin: 0 0.25rem !important;
+    @include h-w(0, 40);
+    bottom: 215px;
+  }
+
+  button {
+    display: block;
+    padding: 15px !important;
+    /* Increased gap */
+    border: 3px solid rgb(255, 255, 255) !important;
+    border-radius: 100%;
+    background-color: transparent;
+    /* Set to transparent */
+    box-sizing: border-box;
+    /* Include padding in the width and height */
+    text-indent: -9999px;
+    @include pos(relative);
+  }
+
+  button:before {
+    content: "";
+    display: block;
+    @include pos(absolute);
+    top: 4px !important;
+    left: 5px !important;
+    width: 85%;
+    /* Smaller white circle */
+    height: 85%;
+    /* Smaller white circle */
+    border-radius: 100%;
+    background-color: rgb(255, 255, 255);
+    /* Match the button color */
+    transform: translateZ(-1px);
+    /* Move behind the button */
+    opacity: 1 !important;
+  }
+
+  li.slick-active button {
+    border: 3px solid $hov-red !important;
+  }
+
+  li.slick-active button:before {
+    background-color: map-get($theme-colors, danger);
+    /* Change color on activation */
+  }
+}
+
+/* ----SERVICE SECTION---- */
+
+%padding {
+  padding-left: 80px !important;
+  padding-right: 80px !important;
+}
+
+#Services-section {
+  @extend %padding;
+  @include pad-t-b(80px, 80px);
+  @include box(light);
+}
+
+%service-h-w {
+  height: 455px;
+}
+
+.service-section-one {
+  @extend %service-h-w;
+  background-color: map-get($theme-colors, secondary);
+}
+
+#service-img {
+  @include h-w(110, 120);
+}
+
+.service-one-img {
+  @include justify-c;
+  padding-top: 130px !important;
+}
+
+/* ----after and before line---- */
+
+.service-line {
+  @include justify-c;
+  @include pad-t-b(5px, 25px);
+}
+
+#service-line::before,
+#service-line::after {
+  content: "";
+  display: inline-block;
+  width: calculateWidth(73);
+  background: $black-color;
+  @include height(3);
+}
+
+.service-title {
+  h5 {
+    letter-spacing: 1px;
+    line-height: 27px;
+    color: $black-color;
+    @include textalign-c;
+    @include fonts(700, 18);
+  }
+
+  padding-bottom: 130px !important;
+}
+
+.service-body {
+  @include pos(relative);
+  display: none;
+
+  h1 {
+    @include pad-t-b(20px, 20px);
+    letter-spacing: 2px;
+    color: map-get($theme-colors, primary);
+    @include textalign-c;
+    @include font-part(xxl);
+    font-weight: bold;
+    @include pos(relative);
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  #service-body-one {
+    @include pos(relative);
+    top: -7px;
+    font-weight: 700;
+    @include font-part(xl);
+  }
+
+  #service-body-two {
+    @include pos(relative);
+    top: -13px;
+    @include font-part(xl);
+    font-weight: 1000;
+  }
+
+  p {
+    @include padd(0, 30px, 30px, 30px);
+    font-size: $font-size-two;
+    letter-spacing: 1px;
+    color: map-get($theme-colors, primary);
+    font-family: $font-stack-two;
+    @include textalign-c;
+  }
+}
+
+.crop-part {
+  width: 0;
+  height: 0;
+  border-bottom: 50px solid map-get($theme-colors, secondary-three);
+  border-right: 50px solid transparent;
+  bottom: 0;
+  left: 0;
+  border-radius: 5px;
+  @include pos(absolute);
+  margin-bottom: -1px;
+  @include dis(none);
+}
+
+/*-- HOVER EFFECT FOR SERVICES --*/
+
+@keyframes bouncing {
+  from,
+  to {
+    transform: scale(1, 1);
+  }
+
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}
+
+.service-section-one,
+.service-section-two,
+.service-section-three,
+.service-section-four {
+  &:hover {
+    .service-body {
+      @include dis(block);
+    }
+
+    transform: scale(1.1);
+    background-color: map-get($theme-colors, danger);
+    transition: all 0.3s ease-in-out 0.1s;
+    box-shadow: rgba(0, 0, 0, 0.5) 20px 20px 30px;
+
+    .service-title {
+      padding: 0px !important;
+    }
+
+    .service-one-img {
+      @include pad-t(30px);
+      transition: all 0.3s ease-in-out 0.1s;
+    }
+
+    .text-uppercase {
+      color: map-get($theme-colors, primary);
+    }
+
+    #service-img {
+      animation: bouncing 0.5s 0.3s;
+    }
+
+    .crop-part {
+      @include dis(block);
+    }
+  }
+}
+
+/* --HOVER EFECT CODE END--*/
+
+.service-section-two {
+  @extend %service-h-w;
+  background-color: map-get($theme-colors, secondary-two);
+}
+
+.service-section-three {
+  @extend %service-h-w;
+  background-color: map-get($theme-colors, secondary);
+}
+
+.service-section-four {
+  @extend %service-h-w;
+  background-color: map-get($theme-colors, secondary-two);
+}
+
+/* ------------------------------*/
+
+/* ----------About us part ------------*/
+
+%padding {
+  padding-left: 80px !important;
+  padding-right: 80px !important;
+}
+
+.about-us-part {
+  @extend %padding;
+}
+
+.about-us-img-part {
+  @include h-w(540, 400);
+  background-color: map-get($theme-colors, cool);
+  border: 10px solid map-get($theme-colors, danger);
+  object-fit: cover;
+  object-position: 45%;
+  z-index: 1;
+  position: relative;
+}
+
+.about-us-body {
+  padding-left: -30px !important;
+}
+
+#about-us-body-part {
+  @include padd(60px, 160px, 60px, 200px);
+  background-color: map-get($theme-colors, secondary-four);
+}
+
+.about-us-title {
+  @include justify-c;
+
+  p {
+    width: 458px;
+    letter-spacing: 1px;
+    line-height: 40px;
+    color: $black-color;
+    @include textalign-c;
+    @include fonts(700, 30);
+  }
+}
+
+.about-us-discription {
+  @include padd(40px, 0px, 50px, 0px);
+
+  p {
+    letter-spacing: 1px;
+    color: $fefe;
+    @include textalign-c;
+    @include fonts(400, 18);
+  }
+}
+
+.about-us-button {
+  @include justify-c;
+  #about-us-button {
+    letter-spacing: 1px;
+    color: $fefe;
+    @include textalign-c;
+    @include h-w(46, 238);
+    border-radius: 23px;
+    background-color: $hov-red;
+    border: none;
+    @include fonts(500, 18);
+  }
+}
+
+/* --DANCE STUDIO SECTION-- */
+
+.dance-studio-section {
+  @include padd(75px, 180px, 75px, 180px);
+}
+
+.dance-studio-title {
+  @include justify-c;
+  p {
+    letter-spacing: 1px;
+    line-height: 25px;
+    color: $hov-red;
+    @include textalign-c;
+    @include fonts(700, 25);
+  }
+}
+
+.dance-studio-img-part {
+  @include justify-c;
+  @include padd(60px, 0px, 60px, 0px);
+  .dance-studio-img {
+    @include h-w(324, 325);
+    border-radius: 162px;
+    background-color: $hov-red;
+  }
+}
+
+.dance-studio-text-part {
+  p {
+    @include fonts(300, 16);
+    letter-spacing: 0px;
+    line-height: 27px;
+    color: #1f1f1f;
+    @include textalign-c;
+  }
+}
+
+/* next and prev button */
+
+#prevbutton-slick {
+  @include h-w(31, 98);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  @include pos(absolute);
+  z-index: 1;
+  top: 50%;
+  left: 275px;
+  transform: translateY(-50%);
+  top: calc(50% - 56.5px);
+  transform: scaleX(-1);
+}
+
+#nextbutton-slick {
+  @include h-w(31, 98);
+  @include pos(absolute);
+  top: 50%;
+  right: 290px;
+  transform: translateY(-185%);
+}
+
+.slick-prev {
+  z-index: 2;
+}
+
+/* ---client section--- */
+
+.client-main-part {
+  background-image: url("../imgs/client/clientbackground.png");
+  @include backimg(bottom);
+  @include height(392);
+  background-color: $black-color;
+  background-position: 60% 70%;
+}
+
+.client-img-part {
+  @include height(392);
+  @include justify-c;
+  align-items: center;
+  img {
+    @include h-w(208, 208);
+    border-radius: 104px;
+  }
+}
+
+.client-details {
+  @include padd(115px, 80px, 0, 0);
+  .client-details-one {
+    @include padd(0px, 0px, 30px, 0px);
+    line-height: 27px;
+    color: map-get($theme-colors, primary);
+    @include fonts(500, 16);
+  }
+  .client-name {
+    color: $hov-red;
+    font-weight: bold;
+    font-size: $font-size-two;
+    font-family: $font-stack-two;
+  }
+}
+
+.slick-part-three {
+  .slick-dots {
+    top: 510px;
+  }
+}
+
+/* --UP COMING EVENT-- */
+
+.up-coming-event-section {
+  .up-coming-event-title {
+    @include justify-c;
+    @include padd(70px, 0px, 70px, 0);
+    letter-spacing: 1px;
+    line-height: 27px;
+    color: $hov-red;
+    @include fonts(700, 25);
+  }
+}
+.part-event {
+  @include justify-c;
+  flex-direction: column;
+  align-items: center;
+  gap: 0px;
+}
+.event-body-part {
+  @include pos(relative);
+  background-image: url("../imgs/event/ballet-545321_1920.png");
+  @include backimg(top);
+  background-color: $black-color;
+  background-position: 60% 40%;
+  @include h-w(295, 747);
+  // background-position: right 20px top 50%;
+  overflow: hidden;
+}
+
+%event-part {
+  letter-spacing: 1px;
+  line-height: 50px;
+  color: map-get($theme-colors, secondary-three);
+  @include textalign-c;
+  @include fonts(700, 30);
+}
+.upcoming-event-body-parts {
+  .upcoming-event-body-parts-zero {
+    @include pad-t(30px);
+    @extend %event-part;
+  }
+  .upcoming-event-body-parts-one {
+    @extend %event-part;
+  }
+  .upcoming-event-body-parts-two {
+    letter-spacing: 1px;
+    line-height: 50px;
+    color: map-get($theme-colors, primary);
+    @include textalign-c;
+    @include fonts(500, 18);
+  }
+  .upcoming-event-body-parts-three {
+    @include textalign-c;
+  }
+  #upcoming-event-body-parts-three {
+    letter-spacing: 1px;
+    line-height: 50px;
+    color: map-get($theme-colors, danger);
+    @include fonts(700, 30);
+    text-decoration: underline;
+  }
+}
+
+.upcoming-event-body-parts-fonts {
+  @include justify-c;
+  @include pad-t(20px);
+  gap: 10px;
+}
+#fonts-event {
+  @include font-part(sm);
+  color: $fefe;
+}
+
+.read-more-event {
+  @include h-w(100, 200);
+  background-color: map-get($theme-colors, secondary-five);
+  @include pos(absolute);
+  transform: rotate(30deg);
+  left: -65px;
+  top: 236px;
+  @include dis(none);
+  p {
+    letter-spacing: 1px;
+    color: $hov-red;
+    filter: drop-shadow(2px 3.464px 6.5px rgba(0, 0, 0, 0.75));
+    @include pad-t(10px);
+    @include textalign-c;
+    @include fonts(700, 18);
+  }
+}
+
+/* --Hover on event */
+.event-body-part {
+  &:hover {
+    .read-more-event {
+      @include dis(block);
+    }
+  }
+}
+
+.event-button {
+  @include padd(60px, 0, 80px, 0);
+  #eve-btn {
+    letter-spacing: 1px;
+    color: $fefe;
+    @include textalign-c;
+    @include fonts(600, 18);
+    @include h-w(52, 223);
+    border-radius: 26px;
+    background-color: $hov-red;
+    border: none;
+  }
+}
+
+#eve-btn:hover,
+#about-us-button:hover,
+#home-btn:hover,
+.footer-btn:hover {
+  transition: all 0.8s, color 0.3s 0.3s;
+  cursor: pointer;
+  color: #ffffff;
+
+  border: solid 1px #000000;
+  border-width: 1px;
+  background: linear-gradient(to right, red, purple);
+  @include box-shadow;
+}
+
+%shadoww {
+  cursor: pointer;
+  color: $fefe;
+  @include text-shadow;
+}
+#upcoming-event-body-parts-three:hover {
+  @extend %shadoww;
+}
+.read-more-event p:hover {
+  @extend %shadoww;
+}
+#fonts-event:hover {
+  @extend %shadoww;
+}
+
+/* -- footer-part -- */
+
+.footer-section {
+  @include padd(60px, 80px, 60px, 80px);
+  @include box(dark);
+}
+
+.footer-head {
+  @include padd(0, 0, 30px, 0);
+
+  .footer-title {
+    letter-spacing: 1px;
+    color: $hov-red;
+    @include fonts(700, 25);
+  }
+}
+.foot-name {
+  border-radius: 15px;
+  border: 1px solid map-get($theme-colors, secondary-three);
+  background-color: $black-color;
+  @include width-pers(90%);
+  margin: 10px 0 !important;
+  padding: 4px 15px !important;
+  font-style: italic;
+  color: #fff;
+  outline: none;
+}
+.foot-email,
+.foot-numb,
+.foot-message {
+  @extend .foot-name;
+}
+
+.foot-button {
+  margin-top: 20px !important;
+  .footer-btn {
+    letter-spacing: 1px;
+    color: map-get($theme-colors, primary);
+    font-family: $font-stack-three;
+    font-size: $font-size-two;
+    @include h-w(36, 130);
+    border-radius: 18px;
+    background-color: map-get($theme-colors, danger);
+    border: none;
+  }
+}
+
+%flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-address-section,
+.footer-mail-section,
+.footer-number-section {
+  @extend %flex-row;
+  @include padd(30px, 0, 0, 0px);
+}
+
+%shadoww {
+  cursor: pointer;
+  color: $fefe;
+  @include text-shadow;
+}
+#foot-icons-part {
+  font-size: 25px !important;
+  color: $fefe;
+  &:hover {
+    @extend %shadoww;
+  }
+}
+
+%details-footer {
+  letter-spacing: 1px;
+  line-height: 25px;
+  color: $fefe;
+  @include fonts(200, 18);
+  @include padd(0, 0, 0, 20px);
+}
+
+#add-dis {
+  @extend %details-footer;
+}
+#mail-dis {
+  @extend %details-footer;
+}
+#num-dis {
+  @extend %details-footer;
+}
+
+/* --copyright-part-- */
+
+.copyright-section {
+  @include padd(20px, 80px, 20px, 80px);
+  @extend %flex-row;
+  @include box(dark);
+  border-top: solid 2px #ffffff;
+}
+
+.copy-right-text {
+  p {
+    font-size: 16px;
+    letter-spacing: 0px;
+    line-height: 35px;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: $font-stack-four;
+  }
+}
+
+.copyright-fonts {
+  display: flex;
+  margin-left: auto !important;
+  gap: 15px;
+}
+
+/*--------------------------------------*/
+
+// .hover14 figure {
+// 	position: relative;
+// }
+// .hover14 figure::before {
+// 	position: absolute;
+// 	top: 0;
+// 	left: -75%;
+// 	z-index: 2;
+// 	display: block;
+// 	content: '';
+// 	width: 50%;
+// 	height: 100%;
+// 	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+// 	background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+// 	-webkit-transform: skewX(-25deg);
+// 	transform: skewX(-25deg);
+// }
+// .hover14 figure:hover::before {
+// 	-webkit-animation: shine .75s;
+// 	animation: shine .75s;
+// }
+// @-webkit-keyframes shine {
+// 	100% {
+// 		left: 125%;
+// 	}
+// }
+// @keyframes shine {
+// 	100% {
+// 		left: 125%;
+// 	}
+// }

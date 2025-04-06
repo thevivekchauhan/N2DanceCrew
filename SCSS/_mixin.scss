@@ -1,0 +1,138 @@
+// for fontsize and font family
+
+@mixin fonts($weight, $size) {
+  font-family: "Raleway" !important;
+  font-weight: $weight !important;
+  font-size: $size + px;
+}
+
+@mixin font-part($values) {
+  @if $values == xxl {
+    font-size: 50px !important;
+  } @else if $values == xl {
+    font-size: 40px !important;
+  } @else if $values == md {
+    font-size: 35px !important;
+  } @else if $values == sm {
+    font-size: 25px !important;
+  } @else {
+    font-size: 20px !important;
+  }
+}
+
+//   for height
+
+@mixin height($height) {
+  height: $height + px;
+}
+
+// for width
+
+@mixin width($width) {
+  width: $width + px;
+}
+
+@mixin width-pers($widthh){
+    width: $widthh;
+}
+
+@mixin h-w($height, $width) {
+  height: $height + px !important;
+  width: $width + px !important;
+}
+@mixin hh-ww($heightt, $widthh) {
+  height: $heightt !important;
+  width: $widthh !important;
+}
+
+// for text align and justfy
+
+@mixin textalign($value) {
+  text-align: $value;
+}
+@mixin justify($value) {
+  display: flex;
+  justify-content: $value;
+}
+
+// padding
+
+@mixin padd($p-t, $p-r, $p-b, $p-l) {
+  padding: $p-t $p-r $p-b $p-l !important;
+}
+
+@mixin pad-t($pp) {
+  padding-top: $pp !important;
+}
+
+@mixin pad-b($pp) {
+  padding-bottom: $pp !important;
+}
+
+@mixin pad-t-b($ppp, $pppp) {
+  padding-top: $ppp !important;
+  padding-bottom: $pppp !important;
+}
+
+// for text align and justfy  center
+
+@mixin textalign-c {
+  text-align: center;
+}
+
+@mixin justify-c {
+  display: flex;
+  justify-content: center;
+}
+
+// for bg color of container
+
+@mixin box($value) {
+  @if $value == dark {
+    background-color: #000000;
+  } @else if $value == light {
+    background-color: #ffffff;
+  }
+}
+
+// display
+
+@mixin dis($dis) {
+  display: $dis;
+}
+
+//positon
+
+@mixin pos($pos) {
+  position: $pos;
+}
+
+// background img
+
+@mixin backimg($bi) {
+  background-repeat: no-repeat;
+  background-position: $bi;
+  background-size: cover;
+}
+
+// hadow
+
+@mixin text-shadow{
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #a19b9e, 0 0 40px #4e4a4c, 0 0 50px #e60073, 0 0 60px #393738, 0 0 70px #96848d;
+    color: #ffffff;
+}
+
+@mixin box-shadow{
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.16) inset, 0px 0px 15px 0px #030303;
+}
+
+@mixin flex-col{
+  display: flex;
+  flex-direction: column;
+}
+@mixin flex-resp{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

@@ -1,0 +1,406 @@
+@use "_index" as *;
+
+/* HOME PART */
+
+@media screen and (max-width: $breakpoint-zero-aaaa) {
+  html,body {
+    overflow-x: hidden;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+@media screen and (max-width: $breakpoint-one-B) {
+  .navbar-collapse {
+    @include pos(absolute);
+    top: 100%;
+    left: -1px;
+    background-color: rgba(0, 0, 0, 0.98);
+    width: 100%;
+  }
+  .nav-item,
+  .nav-link {
+    text-align: center;
+  }
+  #home-section {
+    @include padd(15px, 15px, 0px, 15px);
+    background-color: rgba(0, 0, 0, 0.98);
+  }
+  .home-head-sec {
+    @include padd(80px, 15px, 40px, 15px);
+  }
+  .nav-item {
+    &:hover .nav-text {
+      transform: scale(1.1) translateY(1px);
+    }
+  }
+}
+@media screen and (max-width: $breakpoint-five) {
+  .home-t-one {
+    font-size: $font-size-res-big;
+  }
+  .home-head-sec-two {
+    font-size: $font-size-res-zero;
+  }
+}
+@media screen and (max-width: $breakpoint-six-a) {
+  .home-t-one {
+    font-size: $font-size-res-zero;
+  }
+  .home-head-sec-two {
+    font-size: $font-size-res-one;
+  }
+}
+@media screen and (max-width: $breakpoint-four-c) {
+  #background-img-sec-1 {
+    object-fit: cover;
+    object-position: 51%;
+  }
+}
+
+/* SERVICE SECTION */
+
+@media screen and (max-width: $breakpoint-zero-a) {
+  .service-section-four {
+    margin-top: 30px !important;
+  }
+}
+@media screen and (max-width: $breakpoint-one-B) {
+  .service-section-three {
+    margin-top: 30px !important;
+  }
+}
+@media screen and (max-width: $breakpoint-two) {
+  .service-section-two {
+    margin-top: 30px !important;
+  }
+}
+
+@media screen and (max-width: $breakpoint-five-a) {
+  #Services-section {
+    @include padd(40px, 15px, 40px, 15px);
+  }
+  .service-section-one,
+  .service-section-two,
+  .service-section-three,
+  .service-section-four {
+    &:hover {
+      transform: scale(1);
+    }
+  }
+}
+
+/* ABOUT US PART */
+#about-us-body-part {
+  padding: 60px 160px 60px 200px !important;
+  @media screen and (max-width: $breakpoint-zero) {
+    @include padd(60px, 100px, 60px, 200px);
+  }
+  @media screen and (max-width: $breakpoint-zero-a) {
+    @include padd(60px, 25px, 60px, 200px);
+  }
+  @media screen and (max-width: $breakpoint-one-B) {
+    @include padd(30px, 15px, 30px, 15px);
+  }
+}
+@media screen and (max-width: $breakpoint-one-B) {
+  .about-us-img {
+    @include flex-resp;
+    padding-bottom: 10px !important;
+  }
+  .about-us-part {
+    @include padd(0px, 0px, 0px, 0px);
+  }
+}
+
+@media screen and (max-width: $breakpoint-five) {
+  .about-us-img-part {
+    height: 300px !important;
+    width: 92% !important;
+  }
+  .about-us-title p {
+    font-size: $font-size-res-zero;
+  }
+  .about-us-discription p {
+    font-size: $font-size-res-two;
+  }
+}
+
+/* DANCE STUDIO PART */
+
+.dance-studio-section {
+  @media screen and (max-width: $breakpoint-zero) {
+    @include padd(75px, 100px, 75px, 100px);
+  }
+  @media screen and (max-width: $breakpoint-zero-aa) {
+    @include padd(75px, 50px, 75px, 50px);
+  }
+  @media screen and (max-width: $breakpoint-zero-aaaa) {
+    @include padd(45px, 20px, 45px, 20px);
+  }
+  @media screen and (max-width: $breakpoint-four-c) {
+    @include padd(40px, 15px, 0px, 15px);
+  }
+}
+
+@media screen and (max-width: $breakpoint-zero-b) {
+  #prevbutton-slick {
+    left: 25px;
+  }
+  #nextbutton-slick {
+    right: 30px;
+  }
+}
+
+@media screen and (max-width: $breakpoint-one-a) {
+  #prevbutton-slick {
+    top: calc(50% - 99.5px);
+  }
+  #nextbutton-slick {
+    transform: translateY(-330%);
+  }
+}
+
+@media screen and (max-width: $breakpoint-four-a) {
+  .dance-studio-img-part .dance-studio-img {
+    height: 250px !important;
+    width: 250px !important;
+  }
+  #prevbutton-slick {
+    top: calc(50% - 110.5px);
+  }
+  #nextbutton-slick {
+    transform: translateY(-370%);
+  }
+}
+
+@media screen and (max-width: $breakpoint-five-a) {
+  #prevbutton-slick {
+    width: 50px !important;
+    top: calc(50% - 140.5px);
+  }
+  #nextbutton-slick {
+    width: 50px !important;
+    transform: translateY(-450%);
+  }
+  .dance-studio-img-part {
+    @include padd(30px, 0px, 30px, 0px);
+  }
+}
+@media screen and (max-width: $breakpoint-five) {
+  .dance-studio-img-part .dance-studio-img {
+    height: 150px !important;
+    width: 150px !important;
+  }
+  #nextbutton-slick {
+    width: 40px !important;
+    transform: translateY(-560%);
+  }
+  #prevbutton-slick {
+    width: 40px !important;
+    top: calc(50% - 170.5px);
+  }
+}
+@media screen and (max-width: $breakpoint-six-b) {
+  .dance-studio-title p {
+    font-size: $font-size-res-two;
+  }
+  #nextbutton-slick {
+    width: 25px !important;
+    transform: translateY(-717%);
+  }
+  #prevbutton-slick {
+    width: 25px !important;
+    top: calc(50% - 221.5px);
+  }
+}
+
+/* CLIENT SECTION */
+
+@media screen and (max-width: $breakpoint-one-A) {
+  .client-body-part,
+  .client-img-part {
+    padding-left: 20px !important;
+  }
+}
+@media screen and (max-width: $breakpoint-one-a) {
+  .client-details {
+    @include padd(115px, 30px, 0, 0px);
+  }
+}
+@media screen and (max-width: $breakpoint-two) {
+  .client-details {
+    @include padd(0, 15px, 0, 15px);
+  }
+  .client-body-part {
+    padding-left: 0px !important;
+  }
+  .client-img-part {
+    padding-left: 0px !important;
+    height: 245px;
+  }
+  .client-name {
+    @include padd(0, 0px, 80px, 0px);
+  }
+}
+
+@media screen and (max-width: $breakpoint-five-b) {
+  .client-details .client-details-one {
+    padding-bottom: 15px !important;
+  }
+}
+.slick-part-three .slick-dots {
+  @media screen and (max-width: $breakpoint-two) {
+    top: 580px;
+  }
+  @media screen and (max-width: $breakpoint-four) {
+    top: 640px !important;
+  }
+  @media screen and (max-width: $breakpoint-five-b) {
+    top: 675px !important;
+  }
+  @media screen and (max-width: $breakpoint-five) {
+    top: 685px !important;
+  }
+  @media screen and (max-width: $breakpoint-six-aa) {
+    top: 730px !important;
+  }
+  @media screen and (max-width: $breakpoint-six-aaaa) {
+    top: 735px !important;
+  }
+  @media screen and (max-width: $breakpoint-six-bb) {
+    top: 780px !important;
+  }
+}
+
+/* event part */
+
+@media screen and (max-width: $breakpoint-two) {
+  .event-body-part {
+    width: 95% !important;
+    background-size: 700px;
+  }
+}
+@media screen and (max-width: $breakpoint-six-aa) {
+  .read-more-event {
+    width: 105px !important;
+    left: -42px;
+    top: 260px;
+  }
+  .read-more-event p {
+    padding-top: 0px !important;
+    font-size: $font-size-res-four;
+  }
+}
+@media screen and (max-width: $breakpoint-six-aaa) {
+  .upcoming-event-body-parts-one,
+  .upcoming-event-body-parts-zero,
+  #upcoming-event-body-parts-three {
+    font-size: $font-size-res-one;
+  }
+  .upcoming-event-body-parts-two {
+    font-size: $font-size-res-three;
+  }
+  #fonts-event {
+    font-size: $font-size-res-two;
+  }
+  .up-coming-event-section .up-coming-event-title,
+  .event-button {
+    @include padd(30px, 0, 30px, 0);
+  }
+}
+@media screen and (max-width: $breakpoint-six-b) {
+  .up-coming-event-title p {
+    font-size: $font-size-res-two;
+    text-align: center;
+  }
+}
+
+/*- footer part- */
+
+.footer-section {
+  @media screen and (max-width: $breakpoint-one) {
+    @include padd(30px, 40px, 30px, 40px);
+  }
+  @media screen and (max-width: $breakpoint-two-c) {
+    @include padd(30px, 15px, 30px, 15px);
+  }
+}
+
+@media screen and (max-width: $breakpoint-two) {
+  .footer-title,
+  .foot-button {
+    text-align: center;
+  }
+  .foot-name,
+  .foot-email,
+  .foot-numb,
+  .foot-message {
+    width: 100%;
+  }
+}
+@media screen and (max-width: $breakpoint-six-a) {
+  #num-dis,
+  #mail-dis,
+  #add-dis {
+    font-size: $font-size-res-three;
+  }
+}
+@media screen and (max-width: $breakpoint-six-b) {
+  #num-dis,
+  #mail-dis,
+  #add-dis {
+    font-size: $font-size-res-four;
+    padding: 0px !important;
+  }
+  .footer-address-section,
+  .footer-mail-section,
+  .footer-number-section {
+    @include flex-resp;
+  }
+  #foot-icons-part {
+    @include padd(0, 0, 10px, 0);
+  }
+}
+
+/* copyright part */
+.copyright-section {
+  @media screen and (max-width: $breakpoint-one) {
+    @include padd(20px, 40px, 20px, 40px);
+  }
+  @media screen and (max-width: $breakpoint-two-c) {
+    @include padd(15px, 15px, 15px, 15px);
+  }
+  @media screen and (max-width: $breakpoint-four-a) {
+    @include flex-col;
+  }
+}
+@media screen and (max-width: $breakpoint-four-a) {
+  .copyright-fonts {
+    margin: 0 !important;
+    justify-content: center;
+  }
+  .copy-right-text p {
+    text-align: center;
+    padding-bottom: 10px !important;
+  }
+}
+
+/*----------------------------------------------*/
+
+
+
+@media (max-width: 400px) {
+  .slick-dots button {
+    padding: 9px !important;
+  }
+  button:before {
+    width: 50% !important;
+    height: 50% !important;
+  }
+  .slick-dots {
+    li {
+      @include h-w(0, 25);
+    }
+  }
+}
