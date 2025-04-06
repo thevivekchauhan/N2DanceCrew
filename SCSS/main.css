@@ -1667,3 +1667,34 @@ body {
     font-size: 16px;
   }
 }
+
+/* ...existing code... */
+
+.gallery-item {
+  text-align: center;
+}
+
+.gallery-item .gallery-title {
+  color: #ffffff;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0 10px;
+}
+
+.gallery-item:hover .gallery-title {
+  color: #e62646;
+  transition: color 0.3s ease;
+}
+
+/* Adjust spacing for mobile */
+@media (max-width: 768px) {
+  .gallery-item .gallery-title {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+}
+/* ...existing code... */

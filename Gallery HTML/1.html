@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garba Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #bb86fc;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            color: #cfd8dc;
+            font-size: 1.2rem;
+        }
+        
+        /* DESKTOP TREE STRUCTURE */
+        .gallery-desktop {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .tree-row-desktop {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        .tree-img-desktop {
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+            margin: 0 10px;
+        }
+        
+        .tree-img-desktop:hover {
+            transform: scale(1.1);
+        }
+        
+        .tree-trunk-desktop {
+            width: 40px;
+            height: 150px;
+            background: linear-gradient(to right, #5d4037, #8d6e63);
+            margin-top: 20px;
+        }
+        
+        /* MOBILE TREE STRUCTURE */
+        .gallery-mobile {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            margin: 30px 0;
+        }
+        
+        .tree-row-mobile {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        
+        .tree-img-mobile {
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            margin: 0 5px;
+        }
+        
+        .tree-trunk-mobile {
+            width: 30px;
+            height: 100px;
+            background: linear-gradient(to right, #5d4037, #8d6e63);
+            margin-top: 15px;
+        }
+        
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .copyright {
+            color: #9e9e9e;
+        }
+        
+        /* RESPONSIVE SWITCH */
+        @media (max-width: 768px) {
+            .gallery-desktop {
+                display: none;
+            }
+            
+            .gallery-mobile {
+                display: flex;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Garba</h1>
+            <p class="subtitle">
+            Every step of Garba echoes unity and happiness.
+                </p>
+        </header>
+        
+        <!-- DESKTOP TREE (shown on screens > 768px) -->
+        <div class="gallery-desktop">
+            <!-- Top level (5 small images) -->
+            <div class="tree-row-desktop">
+                <img src="https://imgs.search.brave.com/M5R1OR0VVABfNmB41CCMI8I_TnPLGJe_4y2AA7FOUY8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9m/dWxsLXNob3QtYmVh/dXRpZnVsLXdvbWFu/LXBlcmZvcm1pbmct/YmFsbGV0XzIzLTIx/NDg4NzE5MDMuanBn/P3NlbXQ9YWlzX2h5/YnJpZA" alt="Ballet dancer" class="tree-img-desktop" style="width: 120px; height: 120px;">
+                <img src="https://imgs.search.brave.com/E_2GB6t1o9soy2TbFT2A5VETMmxjFMmZM8IbaTzp-1w/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAwLzM1Lzc0LzQ1/LzM2MF9GXzM1NzQ0/NTQ2X1JlS2xEUWxU/R053eHh2ZEFZUnVR/OWVpTnI1ZlZ5T3lH/LmpwZw" alt="Contemporary dance" class="tree-img-desktop" style="width: 120px; height: 120px;">
+                <img src="https://as2.ftcdn.net/jpg/04/38/65/29/1000_F_438652984_wkFYKb47qrBvbZILBT5KBIJXsJxI8cCv.jpg" alt="Modern dance" class="tree-img-desktop" style="width: 120px; height: 120px;">
+                <img src="https://as1.ftcdn.net/jpg/02/47/34/74/1000_F_247347419_ndimOKkyhMZHwPC73uVreNcL6bXTfnYJ.jpg" alt="Dance performance" class="tree-img-desktop" style="width: 120px; height: 120px;">
+                <img src="https://as1.ftcdn.net/jpg/04/68/70/10/1000_F_468701092_2w8i1439hHxMIgka6G4u6e8ptLh4dHTe.jpg" alt="Dance couple" class="tree-img-desktop" style="width: 120px; height: 120px;">
+            </div>
+            
+            <!-- Middle level (4 medium images) -->
+            <div class="tree-row-desktop">
+                <img src="https://imgs.search.brave.com/qtduLKLBb9FGBVCWj56gvjmFIv6warTufHEWB0mBsa0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9zdHlsaXNoLXNw/b3J0aXZlLWZlbWFs/ZS1tb2RlbHMtZGFu/Y2luZy1jb250ZW1w/b3JhcnktZGFuY2Vf/NDg5NjQ2LTUzNjQu/anBnP3NlbXQ9YWlz/X2h5YnJpZA" alt="Contemporary dance" class="tree-img-desktop" style="width: 160px; height: 160px;">
+                <img src="https://imgs.search.brave.com/5fWrsfM2Gr3WtvnnC1UlPpeWiKDLRm7E1Jm7PK6sGAM/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9w/ZW9wbGUtdGFraW5n/LXBhcnQtZGFuY2Ut/dGhlcmFweS1jbGFz/c18yMy0yMTQ5MzQ2/NTUwLmpwZz9zZW10/PWFpc19oeWJyaWQ" alt="Dance therapy" class="tree-img-desktop" style="width: 160px; height: 160px;">
+                <img src="https://imgs.search.brave.com/u8TnOyoBYxmEScdGY8W-rY_jgZwNPlAqTWMTNJ4N8QY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA0LzgyLzQxLzA1/LzM2MF9GXzQ4MjQx/MDU3M19rUWd4WnZP/ZUdXcThxQUd6eE45/R2djWGFIajRHQ1VX/OC5qcGc" alt="Dance group" class="tree-img-desktop" style="width: 160px; height: 160px;">
+                <img src="https://imgs.search.brave.com/UMpE9j55_RmPvQYYC7nwD-a8rdRYJ8mhX-PfH5BDOAg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by90d28tYXRobGV0/aWMtbW9kZXJuLWJh/bGxldC1kYW5jZXJz/LWFyZS1wb3Npbmct/YWdhaW5zdC1ncmF5/LXN0dWRpby1iYWNr/Z3JvdW5kXzE1Nzky/Ny0xNzEzMi5qcGc_/c2VtdD1haXNfaHli/cmlk" alt="Ballet dancers" class="tree-img-desktop" style="width: 160px; height: 160px;">
+            </div>
+            
+            <!-- Bottom level (3 large images) -->
+            <div class="tree-row-desktop">
+                <img src="https://imgs.search.brave.com/U_O8HrpdpxAYBQ7u_x5555bU8quJjwfwdgf-T57_pXA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAwLzQxLzU4LzYy/LzM2MF9GXzQxNTg2/MjE1X3hvQm9QZE9Y/VEVhRWxOeXVCUDNH/OHdXZThMNHN4Nkxr/LmpwZw" alt="Dance performance" class="tree-img-desktop" style="width: 200px; height: 200px;">
+                <img src="https://imgs.search.brave.com/yDqofCaqW7inET0vc-DizZmZCDvfZw3u2NHtiqBtHFU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9k/YW5jZS1wYXJ0bmVy/cy1kaWZmaWN1bHQt/c3RhbmNlXzIzLTIx/NDc3MTE3MDQuanBn/P3NlbXQ9YWlzX2h5/YnJpZA" alt="Dance partners" class="tree-img-desktop" style="width: 200px; height: 200px;">
+                <img src="https://imgs.search.brave.com/O_pFatsKoJzZy03W67yKC-2tVIJ1AyfTqIUt7YkoP2E/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAxLzc0LzkxLzI4/LzM2MF9GXzE3NDkx/Mjg5OF9ZR3lESE5T/TDhiNk1GbERxWTdh/MzZTUXAzNTZHTDBM/ai5qcGc" alt="Modern dance" class="tree-img-desktop" style="width: 200px; height: 200px;">
+            </div>
+            
+            <!-- Tree trunk -->
+            <div class="tree-trunk-desktop"></div>
+        </div>
+        
+        <!-- MOBILE TREE (shown on screens ≤ 768px) -->
+        <div class="gallery-mobile">
+            <!-- Top level (3 small images) -->
+            <div class="tree-row-mobile">
+                <img src="https://imgs.search.brave.com/M5R1OR0VVABfNmB41CCMI8I_TnPLGJe_4y2AA7FOUY8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9m/dWxsLXNob3QtYmVh/dXRpZnVsLXdvbWFu/LXBlcmZvcm1pbmct/YmFsbGV0XzIzLTIx/NDg4NzE5MDMuanBn/P3NlbXQ9YWlzX2h5/YnJpZA" alt="Ballet dancer" class="tree-img-mobile" style="width: 90px; height: 90px;">
+                <img src="https://imgs.search.brave.com/E_2GB6t1o9soy2TbFT2A5VETMmxjFMmZM8IbaTzp-1w/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAwLzM1Lzc0LzQ1/LzM2MF9GXzM1NzQ0/NTQ2X1JlS2xEUWxU/R053eHh2ZEFZUnVR/OWVpTnI1ZlZ5T3lH/LmpwZw" alt="Contemporary dance" class="tree-img-mobile" style="width: 90px; height: 90px;">
+                <img src="https://as2.ftcdn.net/jpg/04/38/65/29/1000_F_438652984_wkFYKb47qrBvbZILBT5KBIJXsJxI8cCv.jpg" alt="Modern dance" class="tree-img-mobile" style="width: 90px; height: 90px;">
+            </div>
+            
+            <!-- Middle level (2 medium images) -->
+            <div class="tree-row-mobile">
+                <img src="https://imgs.search.brave.com/qtduLKLBb9FGBVCWj56gvjmFIv6warTufHEWB0mBsa0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9zdHlsaXNoLXNw/b3J0aXZlLWZlbWFs/ZS1tb2RlbHMtZGFu/Y2luZy1jb250ZW1w/b3JhcnktZGFuY2Vf/NDg5NjQ2LTUzNjQu/anBnP3NlbXQ9YWlz/X2h5YnJpZA" alt="Contemporary dance" class="tree-img-mobile" style="width: 120px; height: 120px;">
+                <img src="https://imgs.search.brave.com/5fWrsfM2Gr3WtvnnC1UlPpeWiKDLRm7E1Jm7PK6sGAM/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9w/ZW9wbGUtdGFraW5n/LXBhcnQtZGFuY2Ut/dGhlcmFweS1jbGFz/c18yMy0yMTQ5MzQ2/NTUwLmpwZz9zZW10/PWFpc19oeWJyaWQ" alt="Dance therapy" class="tree-img-mobile" style="width: 120px; height: 120px;">
+            </div>
+            
+            <!-- Bottom level (1 large image) -->
+            <div class="tree-row-mobile">
+                <img src="https://imgs.search.brave.com/U_O8HrpdpxAYBQ7u_x5555bU8quJjwfwdgf-T57_pXA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAwLzQxLzU4LzYy/LzM2MF9GXzQxNTg2/MjE1X3hvQm9QZE9Y/VEVhRWxOeXVCUDNH/OHdXZThMNHN4Nkxr/LmpwZw" alt="Dance performance" class="tree-img-mobile" style="width: 150px; height: 150px;">
+            </div>
+            
+            <!-- Tree trunk -->
+            <div class="tree-trunk-mobile"></div>
+        </div>
+        
+        <footer>
+            <p class="copyright">© 2025 Vivek Chauhan's Dance Gallery. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
