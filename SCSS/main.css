@@ -411,50 +411,50 @@ body {
 
 .about-us-img-part {
   width: 100% !important;
-  height: auto !important; /* Remove fixed height */
+  height: auto !important;
   max-width: 400px !important;
-  object-fit: contain !important; /* Change from cover to contain */
+  object-fit: contain !important;
   object-position: center;
-  border: 10px solid black;
-  transition: all 0.3s ease-in-out;
+  border: none; /* Remove border */
+  border-radius: 15px; /* Add rounded corners */
+  transition: all 0.5s ease;
   cursor: pointer;
   margin: 0 auto !important;
-  /* Add these back for hover effect */
   position: relative;
   z-index: 1;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* For overlay effect */
 }
 
-.about-us-img-part:hover {
-  transform: scale(1.02) translateY(-10px);
-  box-shadow: 0 15px 30px rgba(230, 38, 70, 0.3);
-  border-color: #e62646;
-}
-
-.about-us-img-part::after {
+.about-us-img-part::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(230, 38, 70, 0.1);
+  background: linear-gradient(
+    45deg,
+    rgba(230, 38, 70, 0.2),
+    rgba(0, 0, 0, 0.4)
+  );
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: all 0.5s ease;
   z-index: 2;
-  pointer-events: none;
 }
 
-.about-us-img-part:hover::after {
+.about-us-img-part:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.about-us-img-part:hover::before {
   opacity: 1;
 }
 
-/* Touch device support */
-@media (hover: none) {
-  .about-us-img-part:active {
-    transform: scale(1.02) translateY(-10px);
-    box-shadow: 0 15px 30px rgba(230, 38, 70, 0.3);
-    border-color: #e62646;
-  }
+/* Remove previous hover styles */
+.about-us-img-part::after {
+  display: none;
 }
 
 .about-us-body {
