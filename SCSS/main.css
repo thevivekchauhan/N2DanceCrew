@@ -19,11 +19,17 @@ body {
   position: absolute;
   top: 0 !important;
   z-index: 10;
+  padding-top: 0 !important;
+}
+
+.navbar {
+  padding-top: 0 !important;
 }
 
 /* ----logo---- */
 .navbar-brand {
   align-items: center;
+  padding: 0 !important;
 }
 
 .logo-text {
@@ -32,6 +38,12 @@ body {
   color: #fefefe;
   font-family: "Brush Script Std" !important;
   font-style: italic;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
 }
 
 /* ----home-section---- */
@@ -336,13 +348,37 @@ body {
   height: 540px !important;
   width: 400px !important;
   background-color: #18aebf;
-  border: 10px solid #e62646;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 45%;
-     object-position: 45%;
+  border: 10px solid black;
+  object-fit: cover;
+  object-position: 45%;
   z-index: 1;
   position: relative;
+  transition: all 0.3s ease-in-out; /* Add smooth transition */
+  cursor: pointer;
+}
+
+/* Add hover effects */
+.about-us-img-part:hover {
+  transform: scale(1.02) translateY(-10px);
+  box-shadow: 0 15px 30px rgba(230, 38, 70, 0.3);
+  border-color: #ff3860;
+}
+
+/* Add touch device support */
+@media (hover: none) {
+  .about-us-img-part:active {
+    transform: scale(1.02) translateY(-10px);
+    box-shadow: 0 15px 30px rgba(230, 38, 70, 0.3);
+    border-color: #ff3860;
+  }
+}
+
+/* Adjust animation for mobile */
+@media (max-width: 768px) {
+  .about-us-img-part:hover,
+  .about-us-img-part:active {
+    transform: scale(1.01) translateY(-5px); /* Smaller animation for mobile */
+  }
 }
 
 .about-us-body {
@@ -415,7 +451,7 @@ body {
   text-align: center;
   font-family: "Raleway" !important;
   font-weight: 700 !important;
-  font-size: 25px;
+  font-size: 35px;
 }
 
 .dance-studio-img-part {
@@ -917,8 +953,8 @@ body {
   }
 
   .logo {
-    width: 80px !important;
-    height: 80px !important;
+    width: 60px;
+    height: 60px;
   }
 
   /* Services section mobile adjustments */
@@ -1016,11 +1052,52 @@ body {
 
 .video-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Changed from 3 to 4 columns */
-  gap: 20px;
-  max-width: 1200px;
+  grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+  gap: 30px;
+  max-width: 800px; /* Increased from 1200px */
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.video-container iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  min-height: 400px; /* Added minimum height for desktop */
+}
+
+/* Desktop specific video styles */
+@media (min-width: 992px) {
+  .video-container {
+    padding: 0 50px; /* Add more padding on desktop */
+  }
+  
+  .video-container iframe {
+    min-height: 450px; /* Larger minimum height for desktop */
+  }
+}
+
+/* Tablet styles */
+@media (max-width: 991px) {
+  .video-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .video-container iframe {
+    min-height: 350px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .video-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .video-container iframe {
+    min-height: 250px;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -1697,4 +1774,118 @@ body {
     margin-top: 10px;
   }
 }
+
+/* Add new media query for desktop */
+@media screen and (min-width: 992px) {
+  #background-img-sec-1 {
+    height: 700px;  /* Further reduced from 800px */
+  }
+
+  #nav-home-section {
+    padding-top: 0 !important;
+    margin-top: -20px !important; /* Added negative margin to reduce space */
+  }
+
+  .navbar {
+    padding-top: 0 !important;
+  }
+
+  #home-section {
+    padding-top: 30px !important; /* Reduced from 50px */
+  }
+
+  .home-head-sec-one {
+    padding-top: 0 !important;
+    margin-top: -20px !important; /* Reduced space above heading */
+  }
+}
+
+/* ...existing code... */
+
+/* Footer contact info alignment fixes */
+@media (min-width: 768px) {
+  .footer-address-section,
+  .footer-mail-section,
+  .footer-number-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  #foot-icons-part {
+    width: 30px;
+    margin-right: 15px;
+    text-align: center;
+  }
+
+  #add-dis,
+  #mail-dis,
+  #num-dis {
+    margin: 0;
+  }
+
+  .copyright-fonts {
+    margin-left: 45px;
+  }
+
+  .copyright-fonts a {
+    margin-right: 20px;
+  }
+
+  #fonts-event {
+    font-size: 20px;
+  }
+
+  .footer-section .col-md-6:first-child {
+    padding-left: 50px;
+  }
+}
+
+/* Map Styles */
+.map-container {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Desktop specific map styles */
+@media (min-width: 992px) {
+  .map-wrapper {
+    width: 70%;
+    height: 400px;
+    margin: 0 auto;
+  }
+}
+
+/* Tablet specific map styles */
+@media (min-width: 768px) and (max-width: 991px) {
+  .map-wrapper {
+    width: 80%;
+    height: 350px;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile specific map styles */
+@media (max-width: 767px) {
+  .map-wrapper {
+    width: 100%;
+    height: 250px;
+  }
+}
+
 /* ...existing code... */

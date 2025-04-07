@@ -8,7 +8,7 @@
   <title>N2 Dance Crew</title>
   <link rel="stylesheet" type="text/css" href="SCSS/main.css" />
   <link rel="stylesheet" type="text/css" href="SCSS/responsive.css" />
-  <link rel="icon" type="image/x-icon" href="imgs/logo/logo.png" />
+  <link rel="icon" type="image/x-icon" href="imgs/logo/logo.png" sizes="32x32" />
   <script src="https://kit.fontawesome.com/cb104e752f.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -34,7 +34,7 @@
         <div class="container-fluid" id="home-section">
           <div class="logo-section">
             <a class="navbar-brand d-flex flex-column" href="">
-              <img src="imgs/logo/logo.png" alt="N2 Dance Crew Logo" width="100px" height="100px" class="logo" />
+              <img src="imgs/logo/logo.png" alt="N2 Dance Crew Logo" class="logo" />
             </a>
           </div>
           <!-- Remove the existing navbar-toggler button and replace with this: -->
@@ -212,7 +212,6 @@
             </P>
           </div>
           <div class="about-us-button">
-            <!-- <button id="about-us-button">Free Membership</button> -->
           </div>
 
         </div>
@@ -299,12 +298,28 @@
         </div>
         <div class="swiper-slide">
           <div class="gallery-item">
-            <a href="./Gallery HTML/4.html" target="_blank">
-              <img src="imgs/gallery/4.png" alt="Dance Performance">
+            <a href="./Gallery HTML/5.html" target="_blank">
+              <img src="imgs/gallery/5.png" alt="Dance Performance">
             </a><br><br>
-            <h4 class="gallery-title">Stage Performance</h4>
+            <h4 class="gallery-title">Dance Competition</h4>
           </div>
         </div>
+        <div class="swiper-slide">
+          <div class="gallery-item">
+            <a href="./Gallery HTML/2.html" target="_blank">
+              <img src="imgs/gallery/2.png" alt="Dance Performance">
+            </a><br>
+            <h4 class="gallery-title">Wedding Dance</h4>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="gallery-item">
+            <a href="./Gallery HTML/3.html" target="_blank">
+              <img src="imgs/gallery/3.png" alt="Dance Performance">
+            </a><br><br>
+            <h4 class="gallery-title">Annual Function</h4>
+          </div>
+        </div>  
         <div class="swiper-slide">
           <div class="gallery-item">
             <a href="./Gallery HTML/5.html" target="_blank">
@@ -328,34 +343,57 @@
       <p>OUR VIDEOS</p>
     </div><br><br>
     <div class="video-body">
-      <div class="video-container mx-auto">
-        <iframe src="https://www.youtube.com/embed/lD1X-ODWhvg" frameborder="0" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/lD1X-ODWhvg" frameborder="0" allowfullscreen></iframe>
+      <div class="row video-container mx-auto">
+        <div class="col-lg-4.5 col-md-12 mb-4">
+          <iframe src="https://www.youtube.com/embed/lD1X-ODWhvg" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="col-lg-4.5 col-md-12 mb-4">
+          <iframe src="https://www.youtube.com/embed/lD1X-ODWhvg" frameborder="0" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
-    <br><br><br><br>
+  </div>
+  <br><br><br><br>
 
 
     <div class="container-fluid testimonials-section px-4 px-md-5" id="testimonials-section">
       <div class="dance-studio-title">
-        <p>TESTIMONIAL
-        </p>
+        <p>TESTIMONIAL</p>
       </div><br><br>
 
       <div class="testimonials-container">
         <div class="testimonial-slider">
           <div class="testimonial-card">
-            <!-- <div class="testimonial-content"> -->
             <div class="quote-icon">
               <i class="fas fa-quote-left"></i>
             </div>
-            <p class="testimonial-text">The choreography for our wedding was absolutely perfect! The team was patient
-              with all of us non-dancers and created routines that looked amazing but were easy to learn. Our guests
-              loved it!</p><br><br>
-            <div class="testimonial-author"><br><br>
-              <div class="author-info">
-                <h5>- Rajesh Sharma</h5><br>
-              </div>
+            <p class="testimonial-text">Joining N2 Dance Crew was the best decision I made. The instructors are so
+              talented and supportive. I’ve grown so much as a dancer!</p><br><br>
+            <div class="testimonial-author">
+              <img src="imgs/testimonials/sneha.jpg" alt="photo" class="testimonial-photo">
+              <h5>- Sneha Patel</h5><br>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="quote-icon">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="testimonial-text">The energy and passion of the team are contagious. Every session is fun and
+              inspiring. Highly recommend!</p><br><br>
+            <div class="testimonial-author">
+              <img src="imgs/testimonials/amit.jpg" alt="photo" class="testimonial-photo">
+              <h5>- Amit Verma</h5><br>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="quote-icon">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="testimonial-text">I never thought I could dance, but the team made it so easy and enjoyable. I
+              can’t thank them enough for this amazing experience!</p><br><br>
+            <div class="testimonial-author">
+              <img src="imgs/testimonials/riya.jpg" alt="photo" class="testimonial-photo">
+              <h5>- Riya Mehta</h5><br>
             </div>
           </div>
         </div>
@@ -367,6 +405,9 @@
     <div class="row">
       <!-- Contact Info Column - Will appear first on mobile -->
       <div class="col-md-6 order-1 order-md-2 col-12 mb-4">
+        <div class="footer-address-section">
+          <p id="add-dis" style="color: #000;">Samrat Nagar, Isanpur, Ahmedabad, Gujarat 380043</p>
+        </div>
         <div class="footer-address-section">
           <i class="fa-solid fa-location-dot" id="foot-icons-part"></i>
           <p id="add-dis">Samrat Nagar, Isanpur, Ahmedabad, Gujarat 380043</p>
@@ -411,6 +452,27 @@
       </div>
     </div>
   </div>
+
+  <center>
+  <div class="container-fluid">
+    <div class="map-container">
+      <div class="footer-head text-center">
+        <p class="text-uppercase footer-title">find us</p>
+      </div>
+      <div class="map-wrapper">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.8219102555387!2d72.5862396!3d22.988592699999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84f521640d4b%3A0x6853ee97a9098f2c!2sNavrangpura%2C%20Ahmedabad%2C%20Gujarat%20380009!5e0!3m2!1sen!2sin!4v1708486478611!5m2!1sen!2sin"
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</center>
+  
+  <br><br>
 
   <div class="copyright-section">
       <div class="copy-right-text">
@@ -484,7 +546,7 @@
       grabCursor: true,
       centeredSlides: true,
       slidesPerView: "auto",
-      loop: true,
+      loop: true, // Enable infinite looping
       coverflowEffect: {
         rotate: 50,
         stretch: 0,
