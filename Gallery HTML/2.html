@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dance Competition Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dance Gallery Zoom</title>
   <style>
     * {
       margin: 0;
@@ -22,7 +21,7 @@
 
     .container {
       max-width: 1200px;
-      margin: 0 auto;
+      margin: auto;
       padding: 20px;
     }
 
@@ -33,8 +32,8 @@
 
     h1 {
       color: #bb86fc;
-      margin-bottom: 10px;
       font-size: 2.5rem;
+      margin-bottom: 10px;
     }
 
     .subtitle {
@@ -42,117 +41,65 @@
       font-size: 1.2rem;
     }
 
-    /* DESKTOP TREE STRUCTURE */
-    .gallery-desktop {
+    .gallery {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 40px 0;
-    }
-
-    .tree-row-desktop {
-      display: flex;
-      justify-content: center;
       flex-wrap: wrap;
-      width: 100%;
-      margin-bottom: 20px;
-      gap: 20px;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 40px;
     }
 
-    .img-container-desktop {
-      max-width: 120px;
-    }
-
-    .img-container-desktop.medium {
-      max-width: 160px;
-    }
-
-    .img-container-desktop.large {
-      max-width: 200px;
-    }
-
-    .tree-img-desktop {
-      width: 100%;
+    .gallery img {
+      width: 150px;
       height: auto;
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s;
+      cursor: pointer;
+      transition: transform 0.3s ease;
     }
 
-    .tree-img-desktop:hover {
-      transform: scale(1.05);
+    .gallery img:hover {
+      transform: scale(1.03);
     }
 
-    .tree-trunk-desktop {
-      width: 40px;
-      height: 150px;
-      background: linear-gradient(to right, #5d4037, #8d6e63);
-      margin-top: 20px;
-    }
-
-    /* MOBILE TREE STRUCTURE */
-    .gallery-mobile {
+    /* Modal Styles */
+    .modal {
       display: none;
-      flex-direction: column;
+      position: fixed;
+      z-index: 1000;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
       align-items: center;
-      margin: 30px 0;
-    }
-
-    .tree-row-mobile {
-      display: flex;
       justify-content: center;
-      width: 100%;
-      margin-bottom: 15px;
-      gap: 10px;
-      flex-wrap: wrap;
     }
 
-    .img-container-mobile {
-      max-width: 90px;
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #000;
     }
 
-    .img-container-mobile.medium {
-      max-width: 120px;
-    }
-
-    .img-container-mobile.large {
-      max-width: 150px;
-    }
-
-    .tree-img-mobile {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    .tree-trunk-mobile {
-      width: 30px;
-      height: 100px;
-      background: linear-gradient(to right, #5d4037, #8d6e63);
-      margin-top: 15px;
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
     }
 
     footer {
-      margin-top: 50px;
-      padding: 20px;
-      background-color: #1e1e1e;
-      border-radius: 8px;
       text-align: center;
-    }
-
-    .copyright {
+      margin-top: 60px;
       color: #9e9e9e;
     }
 
-    /* RESPONSIVE SWITCH */
     @media (max-width: 768px) {
-      .gallery-desktop {
-        display: none;
-      }
-
-      .gallery-mobile {
-        display: flex;
+      .gallery img {
+        width: 100px;
       }
 
       h1 {
@@ -162,63 +109,66 @@
       .subtitle {
         font-size: 1rem;
       }
+
+      .close-btn {
+        font-size: 1.5rem;
+        top: 15px;
+        right: 20px;
+      }
     }
   </style>
 </head>
-
 <body>
   <div class="container">
     <header>
       <h1>Wedding Dance</h1>
-      <p class="subtitle">Dance is the hidden language of the soul.</p>
+      <p class="subtitle">Click any image to zoom in</p>
     </header>
 
-    <!-- DESKTOP TREE -->
-    <div class="gallery-desktop">
-      <div class="tree-row-desktop">
-        <div class="img-container-desktop"><img src="./Images/1.jpg" alt="Ballet dancer" class="tree-img-desktop"></div>
-        <div class="img-container-desktop"><img src="./Images/2.jpg" alt="Contemporary dance" class="tree-img-desktop"></div>
-        <div class="img-container-desktop"><img src="./Images/3.jpg" alt="Modern dance" class="tree-img-desktop"></div>
-        <div class="img-container-desktop"><img src="./Images/4.jpg" alt="Dance performance" class="tree-img-desktop"></div>
-        <div class="img-container-desktop"><img src="./Images/5.jpg" alt="Dance couple" class="tree-img-desktop"></div>
-      </div>
-
-      <div class="tree-row-desktop">
-        <div class="img-container-desktop medium"><img src="./Images/8.jpg" alt="Contemporary dance" class="tree-img-desktop"></div>
-        <div class="img-container-desktop medium"><img src="./Images/9.jpg" alt="Dance therapy" class="tree-img-desktop"></div>
-        <div class="img-container-desktop medium"><img src="./Images/1.jpg" alt="Dance group" class="tree-img-desktop"></div>
-        <div class="img-container-desktop medium"><img src="./Images/3.jpg" alt="Ballet dancers" class="tree-img-desktop"></div>
-      </div>
-
-      <div class="tree-row-desktop">
-        <div class="img-container-desktop large"><img src="./Images/2.jpg" alt="Dance partners" class="tree-img-desktop"></div>
-        <div class="img-container-desktop large"><img src="./Images/5.jpg" alt="Dance performance" class="tree-img-desktop"></div>
-        <div class="img-container-desktop large"><img src="./Images/7.jpg" alt="Modern dance" class="tree-img-desktop"></div>
-      </div>
-    </div> <!-- End of .gallery-desktop -->
-
-    <!-- MOBILE TREE -->
-    <div class="gallery-mobile">
-      <div class="tree-row-mobile">
-        <div class="img-container-mobile"><img src="./Images/8.jpg" alt="Ballet dancer" class="tree-img-mobile"></div>
-        <div class="img-container-mobile"><img src="./Images/9.jpg" alt="Contemporary dance" class="tree-img-mobile"></div>
-        <div class="img-container-mobile"><img src="./Images/10.jpg" alt="Modern dance" class="tree-img-mobile"></div>
-      </div>
-
-      <div class="tree-row-mobile">
-        <div class="img-container-mobile medium"><img src="./Images/1.jpg" alt="Contemporary dance" class="tree-img-mobile"></div>
-        <div class="img-container-mobile medium"><img src="./Images/2.jpg" alt="Dance therapy" class="tree-img-mobile"></div>
-      </div>
-
-      <div class="tree-row-mobile">
-        <div class="img-container-mobile large"><img src="./Images/4.jpg" alt="Dance performance" class="tree-img-mobile"></div>
-      </div>
-    </div> <!-- End of .gallery-mobile -->
+    <div class="gallery">
+      <img src="./Images/1.jpg" alt="Dance 1">
+      <img src="./Images/2.jpg" alt="Dance 2">
+      <img src="./Images/3.jpg" alt="Dance 3">
+      <img src="./Images/5.jpg" alt="Dance 5">
+      <img src="./Images/6.jpg" alt="Dance 6">
+      <img src="./Images/7.jpg" alt="Dance 7">
+      <img src="./Images/8.jpg" alt="Dance 8">
+      <img src="./Images/9.jpg" alt="Dance 9">
+    </div>
 
     <footer>
-      <p class="copyright">© 2025 Vivek Chauhan's Dance Gallery. All rights reserved.</p>
+      <p>© 2025 Vivek Chauhan's Dance Gallery. All rights reserved.</p>
     </footer>
   </div>
-</body>
 
+  <!-- Zoom Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close-btn" id="closeModal">&times;</span>
+    <img class="modal-content" id="modalImage" src="" alt="Zoomed Image">
+  </div>
+
+  <script>
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    const closeModal = document.getElementById("closeModal");
+
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        modal.style.display = "flex";
+        modalImage.src = img.src;
+        modalImage.alt = img.alt;
+      });
+    });
+
+    closeModal.onclick = function () {
+      modal.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
+</body>
 </html>

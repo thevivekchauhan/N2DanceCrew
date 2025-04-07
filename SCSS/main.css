@@ -12,6 +12,10 @@ body {
 #background-img-sec-1 {
   height: 1000px;
   background-color: #000000;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100vh !important;
 }
 
 /* ----nav and home-section---- */
@@ -43,7 +47,9 @@ body {
 .logo {
   width: 80px;
   height: 80px;
-  object-fit: contain;
+  object-fit: contain !important;
+  width: 80px !important;
+  height: 80px !important;
 }
 
 /* ----home-section---- */
@@ -110,6 +116,59 @@ body {
   font-family: "Raleway" !important;
   font-weight: 800 !important;
   font-size: 80px;
+  position: relative;
+  transition: all 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  padding: 0 15px !important;
+}
+
+.home-t-one::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(230, 38, 70, 0.1), transparent);
+  left: 0;
+  top: 0;
+  transition: width 0.5s ease;
+  z-index: -1;
+}
+
+.home-t-one::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background: #e62646;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.home-t-one:hover {
+  transform: translateY(-5px);
+  text-shadow: 2px 2px 4px rgba(230, 38, 70, 0.3);
+  color: #ffffff;
+}
+
+.home-t-one:hover::before {
+  width: 100%;
+}
+
+.home-t-one:hover::after {
+  width: 80%;
+}
+
+@keyframes glowing {
+  0% { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e62646; }
+  50% { text-shadow: 0 0 20px #fff, 0 0 30px #e62646, 0 0 40px #e62646; }
+  100% { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e62646; }
+}
+
+.home-t-one:hover {
+  animation: glowing 2s infinite;
 }
 
 .home-head-sec-two {
@@ -174,6 +233,10 @@ body {
 #service-img {
   height: 110px !important;
   width: 120px !important;
+  object-fit: contain !important;
+  height: 110px !important;
+  width: auto !important;
+  max-width: 120px !important;
 }
 
 .service-one-img {
@@ -355,6 +418,11 @@ body {
   position: relative;
   transition: all 0.3s ease-in-out; /* Add smooth transition */
   cursor: pointer;
+  object-fit: cover;
+  object-position: center;
+  width: 100% !important;
+  max-width: 400px !important;
+  height: 540px !important;
 }
 
 /* Add hover effects */
@@ -988,6 +1056,14 @@ body {
   .service-body p {
     font-size: 14px;
   }
+
+  .gallery-item img {
+    height: 250px !important;
+  }
+  
+  .about-us-img-part {
+    height: 400px !important;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -1029,6 +1105,14 @@ body {
   .service-section-two,
   .service-section-three,
   .service-section-four {
+    height: 350px !important;
+  }
+
+  .gallery-item img {
+    height: 200px !important;
+  }
+  
+  .about-us-img-part {
     height: 350px !important;
   }
 }
@@ -1089,7 +1173,6 @@ body {
   }
 }
 
-/* Mobile styles */
 @media (max-width: 767px) {
   .video-container {
     grid-template-columns: 1fr;
@@ -1289,34 +1372,28 @@ body {
 .testimonial-author {
   display: flex;
   align-items: center;
-  margin-top: auto;
+  gap: 15px;
+  margin-top: 20px;
+  padding: 10px 0;
 }
 
-.author-img {
-  width: 50px;
-  height: 50px;
+.testimonial-photo {
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  overflow: hidden;
-  margin-right: 15px;
-  border: 2px solid #f9cb28;
-}
-
-.author-img img {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
+  border: 2px solid #e62646;
+  object-fit: cover;
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50%;
 }
 
-.author-info h5 {
-  margin: 0;
+.testimonial-author h5 {
+  margin: 0 !important;
+  color: #e62646;
   font-size: 18px;
-  color: #fff;
-}
-
-.author-info p {
-  margin: 5px 0 0;
-  font-size: 14px;
-  color: #aaa;
+  font-family: "Raleway", sans-serif;
 }
 
 /* Responsive adjustments */
@@ -1889,3 +1966,19 @@ body {
 }
 
 /* ...existing code... */
+
+/* Image aspect ratio fixes */
+img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Gallery images fix */
+.gallery-item img {
+  object-fit: cover;
+  width: 100%;
+  height: 300px !important;
+  border-radius: 10px;
+}
