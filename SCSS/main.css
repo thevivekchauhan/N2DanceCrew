@@ -410,44 +410,50 @@ body {
 }
 
 .about-us-img-part {
-  height: 540px !important;
-  width: 400px !important;
-  background-color: #18aebf;
-  border: 10px solid black;
-  object-fit: cover;
-  object-position: 45%;
-  z-index: 1;
-  position: relative;
-  transition: all 0.3s ease-in-out; /* Add smooth transition */
-  cursor: pointer;
-  object-fit: cover;
-  object-position: center;
   width: 100% !important;
+  height: auto !important; /* Remove fixed height */
   max-width: 400px !important;
-  height: 540px !important;
+  object-fit: contain !important; /* Change from cover to contain */
+  object-position: center;
+  border: 10px solid black;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  margin: 0 auto !important;
+  /* Add these back for hover effect */
+  position: relative;
+  z-index: 1;
 }
 
-/* Add hover effects */
 .about-us-img-part:hover {
   transform: scale(1.02) translateY(-10px);
   box-shadow: 0 15px 30px rgba(230, 38, 70, 0.3);
-  border-color: #ff3860;
+  border-color: #e62646;
 }
 
-/* Add touch device support */
+.about-us-img-part::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(230, 38, 70, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.about-us-img-part:hover::after {
+  opacity: 1;
+}
+
+/* Touch device support */
 @media (hover: none) {
   .about-us-img-part:active {
     transform: scale(1.02) translateY(-10px);
     box-shadow: 0 15px 30px rgba(230, 38, 70, 0.3);
-    border-color: #ff3860;
-  }
-}
-
-/* Adjust animation for mobile */
-@media (max-width: 768px) {
-  .about-us-img-part:hover,
-  .about-us-img-part:active {
-    transform: scale(1.01) translateY(-5px); /* Smaller animation for mobile */
+    border-color: #e62646;
   }
 }
 
@@ -2023,4 +2029,64 @@ img {
   height: 100vh !important;
   max-height: 800px;
   position: relative;
+}
+
+/* About section styles */
+#about-section {
+  background-color: #000;
+  padding: 80px 0 !important;
+}
+
+.about-img-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-us-img-part {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 400px !important;
+  object-fit: contain !important;
+  border: 10px solid black;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.about-content {
+  padding: 30px !important;
+}
+
+.about-us-discription p {
+  color: #fefefe;
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: left;
+  font-family: "Raleway", sans-serif !important;
+  margin-bottom: 0 !important;
+}
+
+/* Desktop styles */
+@media (min-width: 992px) {
+  .about-content {
+    padding: 0 50px !important;
+  }
+
+  .about-us-img-part {
+    margin: 0 !important;
+  }
+}
+
+/* Tablet styles */
+@media (max-width: 991px) {
+  .about-content {
+    padding: 30px 15px !important;
+    text-align: center;
+  }
+  
+  .about-us-discription p {
+    text-align: center;
+  }
 }
