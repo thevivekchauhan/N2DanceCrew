@@ -16,6 +16,8 @@ body {
   object-position: center;
   width: 100%;
   height: 100vh !important;
+  max-height: 800px;
+  margin-top: -60px; /* Reduce top space */
 }
 
 /* ----nav and home-section---- */
@@ -1856,6 +1858,7 @@ body {
 @media screen and (min-width: 992px) {
   #background-img-sec-1 {
     height: 700px;  /* Further reduced from 800px */
+    margin-top: -80px; /* More reduction for desktop */
   }
 
   #nav-home-section {
@@ -1874,6 +1877,13 @@ body {
   .home-head-sec-one {
     padding-top: 0 !important;
     margin-top: -20px !important; /* Reduced space above heading */
+  }
+
+  .navbar-part,
+  .slick-slider-container,
+  .carousel-item,
+  #background-img-sec-1 {
+    max-height: 700px; /* Reduced max height for desktop */
   }
 }
 
@@ -1981,4 +1991,36 @@ img {
   width: 100%;
   height: 300px !important;
   border-radius: 10px;
+}
+
+/* Background image fixes */
+#background-img-sec-1 {
+  height: 100vh !important;
+  max-height: 800px;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  margin-top: -60px; /* Reduce top space */
+}
+
+.carousel-item {
+  width: 100% !important;
+  height: 100vh !important;
+  max-height: 800px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-slider-container {
+  height: 100vh !important;
+  max-height: 800px;
+  overflow: hidden;
+}
+
+.navbar-part {
+  height: 100vh !important;
+  max-height: 800px;
+  position: relative;
 }
